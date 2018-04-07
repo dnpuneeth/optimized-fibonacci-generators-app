@@ -1,0 +1,29 @@
+{% load static %}
+<html>
+    <head>
+        <title>Fibonacci Sequence</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link href="{% static 'fibonacci/css/style.css' %}" rel="stylesheet">
+    </head>
+    <body>
+        <div class="main">
+            <h1> Fibonacci sequence Generator </h1>
+        </br>
+            <div class="form-group">
+                <form action="{% url 'fibonacci:find' %}" method="post"continue>
+                    {% csrf_token %}
+                    <label> Enter the Number</label>
+                    <input type="number" min="0" name="num" class="form-control-sm" 
+                    placeholder="10" required/>
+                    <input type="submit" value="Find" class="btn btn-primary"/>
+                </form>
+            </div>
+            {% if pre %} 
+                <h3> The {{num}} Element in the sequence is:</h3>
+                <textarea rows=10 cols="75"> {{ pre }} </textarea>
+                <h3> Total response time {{time}} Seconds</h3>
+            {% endif %}
+        </div>
+    </body>
+</html>
