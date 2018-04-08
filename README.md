@@ -1,44 +1,25 @@
-# Python: Getting Started
+# Requirements
 
-A barebones Django app, which can easily be deployed to Heroku.
-
-This application supports the [Getting Started with Python on Heroku](https://devcenter.heroku.com/articles/getting-started-with-python) article - check it out.
+1) Python environment(3.5) [installed properly](http://install.python-guide.org)
+2) Mysql
 
 ## Running Locally
 
-Make sure you have Python [installed properly](http://install.python-guide.org). Also, install the [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli) and [Postgres](https://devcenter.heroku.com/articles/heroku-postgresql#local-setup).
+. Create databse 'fiboncacci'
+. Change database username and password in callhub/settings.py
 
 ```sh
-$ git clone git@github.com:heroku/python-getting-started.git
-$ cd python-getting-started
+$ git clone $ git clone https://github.com/dnpuneeth/optimized-fibonacci-generators-app.git
 
-$ pipenv install
+$ cd optimized-fibonacci-generators-app
 
-$ createdb python_getting_started
+$ python manage.py makemigrations fibonacci
 
 $ python manage.py migrate
-$ python manage.py collectstatic
 
-$ heroku local
+$ python manage.py sqlmigrate polls 'migration name'
+
+$ python manage.py runserver
 ```
 
-Your app should now be running on [localhost:5000](http://localhost:5000/).
-
-## Deploying to Heroku
-
-```sh
-$ heroku create
-$ git push heroku master
-
-$ heroku run python manage.py migrate
-$ heroku open
-```
-or
-
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
-
-## Documentation
-
-For more information about using Python on Heroku, see these Dev Center articles:
-
-- [Python on Heroku](https://devcenter.heroku.com/categories/python)
+Your app should now be running on [localhost:8000](http://localhost:8000/).
