@@ -9,9 +9,9 @@
     <body>
         <div class="main">
             <h1> Fibonacci sequence Generator </h1>
-        </br>
+            </br>
             <div class="form-group">
-                <form action="{% url 'fibonacci:find' %}" method="post"continue>
+                <form method="post">
                     {% csrf_token %}
                     <label> Enter the Number</label>
                     <input type="number" min="0" name="num" class="form-control-sm" 
@@ -19,10 +19,10 @@
                     <input type="submit" value="Find" class="btn btn-primary"/>
                 </form>
             </div>
-            {% if pre %} 
+            {% if res %} 
                 <h3> The {{num}} Element in the sequence is:</h3>
-                <textarea rows=10 cols="75"> {{ pre }} </textarea>
-                <h3> Total response time {{time}} Seconds</h3>
+                <textarea rows=10 cols="75"> {{ res }} </textarea>
+                <h3> Total response time Duration: {{time}} Seconds</h3>
             {% endif %}
         </div>
     </body>
