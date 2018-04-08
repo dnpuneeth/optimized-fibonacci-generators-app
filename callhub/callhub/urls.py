@@ -4,5 +4,5 @@ from django.urls import include, path
 
 
 urlpatterns = [
-    path('fibonacci/', include('fibonacci.urls'))
+    path('', include('fibonacci.urls'))
 ]
