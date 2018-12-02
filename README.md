@@ -2,6 +2,7 @@
 
 1) Python environment(3.5) [installed properly](http://install.python-guide.org)
 2) Mysql
+3) Django
 
 ## Running Locally
 
